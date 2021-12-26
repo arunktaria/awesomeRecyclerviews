@@ -12,5 +12,9 @@
         android:id="@+id/flexmenu"
         android:title="flex layout" />
 
+    <item
+        android:id="@+id/vegamenu"
+        android:title="vega layout" />
+
 
 </menu>

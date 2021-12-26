@@ -18,6 +18,7 @@ import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
 
 import com.google.android.flexbox.FlexDirection
+import com.stone.vega.library.VegaLayoutManager
 
 class MainActivity : AppCompatActivity() {
     lateinit var recyclerview:RecyclerView
@@ -132,6 +133,31 @@ fun chiplayout()
 
 
 
+    fun vegalayout()
+    {
+        titletextview.setText("vega  RecyclerView")
+        list.clear()
+        val ob=DataModel()
+
+        ob.title="hello world"
+        ob.des="this is vega layout"
+        ob.image=R.drawable.dev
+        for (i in 0..10)
+            list.add(i,ob)
+        adapter=FanLayoutRecycler(this,list)
+
+        val vega=VegaLayoutManager()
+        vega.canScrollHorizontally()
+
+        recyclerview.layoutManager=vega
+        recyclerview.adapter=adapter
+
+
+    }
+
+
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val infla=MenuInflater(this)
@@ -156,6 +182,11 @@ fun chiplayout()
             R.id.flexmenu->
             {
                 FlexBox()
+
+            }
+            R.id.vegamenu->
+            {
+                vegalayout()
 
             }
         }
